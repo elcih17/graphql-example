@@ -1,0 +1,35 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js --exec babel-node --presets es2015 ENV=development",
+    "start": "nodemon src/server.js --exec babel-node --presets es2015 ENV=production"
+  },
+  "dependencies": {
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "es6-promise": "^4.1.1",
+    "express": "^4.15.4",
+    "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5",
+    "graphql-parser": "^2.1.0",
+    "graphql-tag": "^2.4.2",
+    "graphql-tools": "^1.2.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.7",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.5"
+  }
+}
