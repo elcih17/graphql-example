@@ -1,15 +1,50 @@
 type Query {
   hello: String
-  user(_id: String!): User
-  users: [User!]!
-}
-
-type User {
-  _id: String!
-  name: String!
-  age: Int!
+  user(_id: ID!): User!
+  posts(author: UserInput!): [Post]!
+  comments(post: PostInput!): [Comment]!
 }
 
 type Mutation {
   createUser(name: String!, age: Int!): User
+  createPost(post: PostInput!): Post
+  createComment(comment: CommentInput!): Comment
+}
+
+type User {
+  _id: ID!
+  name: String!
+  age: Int!
+  posts: [Post]
+}
+
+type Post {
+  _id: ID!
+  author: User!
+  title: String!
+  content: String!
+  comments: [Comment]
+}
+
+type Comment {
+  _id: ID!
+  post: Post!
+  content: String!
+}
+
+input UserInput {
+  _id: ID!
+  name: String!
+}
+
+input PostInput {
+  author: UserInput!
+  title: String!
+  content: String!
+}
+
+
+input CommentInput {
+  post_id: ID!
+  content: String!
 }
